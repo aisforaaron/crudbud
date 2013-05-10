@@ -1,10 +1,10 @@
 <?php
 // ----------------------------------------------------------------
-// sitecon.php AKA crudbud
-// Created by: aarondllc@gmail.com
+// crudbud
+// created by: aarondllc@gmail.com
 // ----------------------------------------------------------------
 
-$db = array('user' => 'root', 'pass' => 'root', 'host' => 'localhost', 'database' => 'aaron_bda');
+$db = array('user' => 'username', 'pass' => 'password', 'host' => 'localhost', 'database' => 'dbname');
 
 /**
  * DO NOT EDIT BELOW THIS LINE UNLESS YOU ARE EXTENDING FUNCTIONALITY
@@ -48,7 +48,6 @@ $css = 'body { font: 12px/14px sans-serif; margin: auto 40px; padding-top:40px; 
 
 // open up connection
 $mysqli = new mysqli($db['host'], $db['user'], $db['pass'], $db['database']);
-// check connection 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
@@ -72,7 +71,7 @@ function getColumns($table){
       return $table_columns;
     }
   } else {
-    return false; // passed table name is not in array, add error msg here?
+    return false; // passed table name is not in array
   }
 }
 
